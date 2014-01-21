@@ -1,5 +1,6 @@
 {  
-  name:"Medical Terminology", 
+  name:"Introduction to Medical Language", 
+  course:"Medical Terminology",
   msgChunks: [
           {type:"info", 
            prompts:["Lesson 1.1: Introduction to Medical Language. In this lesson, you’ll learn about the origins of medical language and the different categories of medical terms.",
