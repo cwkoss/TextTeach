@@ -25,9 +25,21 @@ for msgChunk in data['msgChunks']:
             x = raw_input()
     elif msgChunk['type'] == 'multi':
         x = ""
-        while(x.lower() != "c"):
-            print("Text C to continue.")
-            x = raw_input()
+        correct = ""
+        for response in msgChunk['responses']:            
+            if msgChunk['responses'][response]['correct']:
+                correct = response
+        x = raw_input().lower()
+        while(x != correct):
+            if(x == "a" or x == "b" or x == "c" or x == "d"):
+                print(msgChunk['responses'][x]['prompts'][0])
+            else:
+                print "Try again, choosing from A, B, C, or D."
+            x = raw_input().lower()
+        if x == correct:
+            print(msgChunk['responses'][x]['prompts'][0])
+        
+        
 
 
 print "Done!"
