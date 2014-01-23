@@ -1,0 +1,1 @@
+curl -X POST https://api.twilio.com/2010-04-01/Accounts/AC94743d49300d49a696cf09bfef229c82/SMS/Messages.json \ -u AC94743d49300d49a696cf09bfef229c82:459bb4d749bdff002e45d44d33a4ad7f \ -d "From=+12067454564" \ -d "To=+14252467703" \ -d 'Body=test'
