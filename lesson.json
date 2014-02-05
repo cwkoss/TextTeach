@@ -7,56 +7,56 @@
           {"type":"multi",
            "prompts":["1. After observing several vicious territorial fights, Jane Goodall had to revise her earlier opinion that these particular primates were always ------ animals.", 
                     "A. ignorant\nB. inquisitive\nC. responsiven\nD. peaceful\nE. cruel"],
-           "responses":{"a": {"correct":false, "prompts":['Incorrect. If Jane originally thought the apes were “ignorant”, then watching them fight wouldn’t change her opinion. Pick again.']},
-                      "b": {"correct":false, "prompts":['Incorrect. If Jane originally thought the apes were “inquisitive”, then watching them fight wouldn’t change her opinion. Pick again.']},
-                      "c": {"correct":false, "prompts":['Incorrect. If Jane originally thought the apes were “responsive”, then watching them fight wouldn’t change her opinion. Pick again.']},
-                      "d": {"correct":true, "prompts":['Correct. Jane originally thought the primates were always peaceful. After seeing them fight, she changed her opinion.']},
-                      "e": {"correct":false, "prompts":['Incorrect. If Jane originally thought the apes were “cruel”, then watching them fight wouldn’t change her opinion. Pick again.']},
-                      "h": {"correct":false, "prompts":['Jane had to revise her opinion of the apes after she saw them fight. The correct answer will describe what she originally thought of them.']}                                            
+           "responses":{"a": {"correct":false, "prompts":["Incorrect. If Jane originally thought the apes were \“ignorant\”, then watching them fight wouldn’t change her opinion. Pick again."]},
+                      "b": {"correct":false, "prompts":["Incorrect. If Jane originally thought the apes were \“inquisitive\”, then watching them fight wouldn’t change her opinion. Pick again."]},
+                      "c": {"correct":false, "prompts":["Incorrect. If Jane originally thought the apes were \“responsive\”, then watching them fight wouldn’t change her opinion. Pick again."]},
+                      "d": {"correct":true, "prompts":["Correct. Jane originally thought the primates were always peaceful. After seeing them fight, she changed her opinion."]},
+                      "e": {"correct":false, "prompts":["Incorrect. If Jane originally thought the apes were \“cruel\”, then watching them fight wouldn’t change her opinion. Pick again."]},
+                      "h": {"correct":false, "prompts":["Jane had to revise her opinion of the apes after she saw them fight. The correct answer will describe what she originally thought of them."]}                                            
                       }
           },
           {"type":"multi",
            "prompts":["2. There is no doubt that Larry is a genuine ------- : he excels at telling stories that fascinate his listeners.", 
                     "A. braggart\nB. dilettante\nC. pilferer\nD. prevaricator\nE. raconteur"],
-           "responses":{"a": {"correct":false, "prompts":['Incorrect. While a “braggart” may tell stories, someone who brags isn’t likely to fascinate his listeners. Pick again.']},
-                      "b": {"correct":false, "prompts":['Incorrect. A “dilettante” is someone who dabbles in various activties, so it isn’t likely that he “excels” at storytelling. Pick again.']},
-                      "c": {"correct":false, "prompts":['Incorrect. A “pilferer” is a thief, not a storyteller. Pick again.']},
-                      "d": {"correct":false, "prompts":['Incorrect. A “prevaricator” is someone who evades the truth. They may tell stories, but their goal is to deceive, not fascinate. Pick again.']},
-                      "e": {"correct":true, "prompts":['Correct. A “raconteur” is someone who is good at telling fascinating stories.']},
-                      "h": {"correct":false, "prompts":['The correct answer will mean someone who is good at telling fascinating stories.']}                                            
+           "responses":{"a": {"correct":false, "prompts":["Incorrect. While a \“braggart\” may tell stories, someone who brags isn’t likely to fascinate his listeners. Pick again."]},
+                      "b": {"correct":false, "prompts":["Incorrect. A \“dilettante\” is someone who dabbles in various activties, so it isn’t likely that he “excels” at storytelling. Pick again."]},
+                      "c": {"correct":false, "prompts":[" Incorrect. A \“pilferer\” is a thief, not a storyteller. Pick again."]},
+                      "d": {"correct":false, "prompts":["Incorrect. A \“prevaricator\” is someone who evades the truth. They may tell stories, but their goal is to deceive, not fascinate. Pick again."]},
+                      "e": {"correct":true, "prompts":["Correct. A \“raconteur\” is someone who is good at telling fascinating stories."]},
+                      "h": {"correct":false, "prompts":["The correct answer will mean someone who is good at telling fascinating stories. "]}                                            
                       }
           },
           {"type":"multi",
            "prompts":["3. A discerning publishing agent can ------- promising material from a mass of submissions, separating the good from the bad.", 
                     "A. supplant\nB. winnow\nC. finagle\nD. dramatize\nE. overhaul"],
-           "responses":{"a": {"correct":false, "prompts":['Incorrect. “Supplant” means to replace. That’s not related to “separating the good from the bad”. Pick again.']},
-                      "b": {"correct":true, "prompts":['Correct. To “winnow” promising material from the mass of submissions is to separate the good from the bad.']},
-                      "c": {"correct":false, "prompts":['Incorrect. “Finagle” means to bargain or strike a deal. That’s not related to “separating the good from the bad”. Pick again.']},
-                      "d": {"correct":false, "prompts":['Incorrect. “Dramatize” means to make something into a drama. That’s not related to “separating the good from the bad”. Pick again.']},
-                      "e": {"correct":false, "prompts":['Incorrect. “Overhaul” is to re-do or rebuild. That’s not related to “separating the good from the bad”. Pick again.']},
-                      "h": {"correct":false, "prompts":['The correct answer will mean the same thing as “separating the good from the bad”.']}                                            
+           "responses":{"a": {"correct":false, "prompts":["Incorrect. \“Supplant\” means to replace. That’s not related to “separating the good from the bad”. Pick again."]},
+                      "b": {"correct":true, "prompts":["Correct. To \“winnow\” promising material from the mass of submissions is to separate the good from the bad."]},
+                      "c": {"correct":false, "prompts":["Incorrect. \“Finagle\” means to bargain or strike a deal. That’s not related to “separating the good from the bad”. Pick again."]},
+                      "d": {"correct":false, "prompts":["Incorrect. \“Dramatize\” means to make something into a drama. That’s not related to “separating the good from the bad”. Pick again."]},
+                      "e": {"correct":false, "prompts":["Incorrect. \“Overhaul\” is to re-do or rebuild. That’s not related to “separating the good from the bad”. Pick again."]},
+                      "h": {"correct":false, "prompts":["The correct answer will mean the same thing as \“separating the good from the bad\”."]}                                            
                       }
           },
           {"type":"multi",
-           "prompts":['4. Although some think the terms "bug" and "insect" are ------- , the former term actually refers to ------- group of insects.', 
-                    'A. parallel . . an identical\nB. precise . . an exact\nC. interchangeable . . a particular\nD. exclusive . . a separate\nE. useful . . a useless'],
-           "responses":{"a": {"correct":false, "prompts":['Incorrect. The word “although” sets up a contrast between what people think “bug” means and what it really means. Pick again.']},
-                      "b": {"correct":false, "prompts":['Incorrect. The word “although” sets up a contrast between what people think “bug” means and what it really means. Pick again.']},
-                      "c": {"correct":true, "prompts":['Correct. Although the two terms are considered “interchangeable”, in fact the term “bug” refers to “a particular” group of insects.']},
-                      "d": {"correct":false, "prompts":['Incorrect. The word “although” sets up a contrast between what people think “bug” means and what it really means. Pick again.']},
-                      "e": {"correct":false, "prompts":['Incorrect. The word “although” sets up a contrast between what people think “bug” means and what it really means. Pick again.']},
-                      "h": {"correct":false, "prompts":['The word “although” sets up a contrast, so the correct answer will logically complete the idea of the sentence.']}                                            
+           "prompts":["4. Although some think the terms \"bug\" and \"insect\" are ------- , the former term actually refers to ------- group of insects.", 
+                    "A. parallel . . an identical\nB. precise . . an exact\nC. interchangeable . . a particular\nD. exclusive . . a separate\nE. useful . . a useless"],
+           "responses":{"a": {"correct":false, "prompts":["Incorrect. The word \“although\” sets up a contrast between what people think \“bug\” means and what it really means. Pick again."]},
+                      "b": {"correct":false, "prompts":["Incorrect. The word \“although\” sets up a contrast between what people think \“bug\” means and what it really means. Pick again."]},
+                      "c": {"correct":true, "prompts":["Correct. Although the two terms are considered \“interchangeable\”, in fact the term \“bug\” refers to \“a particular\” group of insects."]},
+                      "d": {"correct":false, "prompts":["Incorrect. The word \“although\” sets up a contrast between what people think \“bug\” means and what it really means. Pick again."]},
+                      "e": {"correct":false, "prompts":["Incorrect. The word \“although\” sets up a contrast between what people think \“bug\” means and what it really means. Pick again."]},
+                      "h": {"correct":false, "prompts":["The word \“although\” sets up a contrast, so the correct answer will logically complete the idea of the sentence."]}                                            
                       }
           },
           {"type":"multi",
            "prompts":["5. The novel's protagonist, a pearl diver, naïvely expects that the buyers will compete among themselves to pay him the best price for his pearl, but instead they ------- to ------- him.", 
                     "A. collude . . swindle\nB. pretend . . praise\nC. conspire . . reimburse\nD. refuse . . cheat\nE. venture . . reward"],
-           "responses":{"a": {"correct":true, "prompts":['Correct. In contrast to the pearl diver’s naive belief that the buyers will pay a fair price, they do otherwise. They “collude” to “swindle” him.']},
-                      "b": {"correct":false, "prompts":['Incorrect. The pearl diver’s naive belief that the buyers will pay a fair price is in contrast to what the buyers will really do. Pick again.']},
-                      "c": {"correct":false, "prompts":['Incorrect. The pearl diver’s naive belief that the buyers will pay a fair price is in contrast to what the buyers will really do. Pick again.']},
-                      "d": {"correct":false, "prompts":['Incorrect. The pearl diver’s naive belief that the buyers will pay a fair price is in contrast to what the buyers will really do. Pick again.']},
-                      "e": {"correct":false, "prompts":['Incorrect. The pearl diver’s naive belief that the buyers will pay a fair price is in contrast to what the buyers will really do. Pick again.']},
-                      "h": {"correct":false, "prompts":['The pearl diver believes one thing is going to happen, but the buyers do something different.']}                                            
+           "responses":{"a": {"correct":true, "prompts":["Correct. In contrast to the pearl diver’s naive belief that the buyers will pay a fair price, they do otherwise. They \“collude\” to \“swindle\” him."]},
+                      "b": {"correct":false, "prompts":["Incorrect. The pearl diver’s naive belief that the buyers will pay a fair price is in contrast to what the buyers will really do. Pick again."]},
+                      "c": {"correct":false, "prompts":["Incorrect. The pearl diver’s naive belief that the buyers will pay a fair price is in contrast to what the buyers will really do. Pick again."]},
+                      "d": {"correct":false, "prompts":["Incorrect. The pearl diver’s naive belief that the buyers will pay a fair price is in contrast to what the buyers will really do. Pick again."]},
+                      "e": {"correct":false, "prompts":["Incorrect. The pearl diver’s naive belief that the buyers will pay a fair price is in contrast to what the buyers will really do. Pick again."]},
+                      "h": {"correct":false, "prompts":["The pearl diver believes one thing is going to happen, but the buyers do something different. "]}                                            
                       }
           }                              
           ]
