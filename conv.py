@@ -18,7 +18,7 @@ client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 # chris - "4252467703"
 # james - "2068490631"
-PHONENUM = "4252467703"
+PHONENUM = "2068490631"
 msgCount = 0
 
 def waitForNewMessage():
@@ -109,13 +109,19 @@ def runLesson():
                 if(x == "a" or x == "b" or x == "c" or x == "d" or x == "e" or x == "h"):
                     sendMessage(msgChunk['responses'][x]['prompts'][0])
                 else:
-                    sendMessage("Try again, choosing from A, B, C, or D.")
+                    sendMessage("Try again, choosing from A, B, C, D, E, or H for Hint")
                 x = waitForNewMessage().lower()
             if x == correct:
                 sendMessage(msgChunk['responses'][x]['prompts'][0])
+
+    sendMessage("Complete!\nYour Score: 300 points\nYour Time: 3:35")
            
-    sendMessage("You have completed Lesson " + str(data['lessonnum']) + ": " + data['name'] + ". Text one of the following options.")
-    sendMessage("L - Lesson\nQ - Quiz\nG - Grades\nP - Points\nS - Settings")
-    print "Done!"
+#    sendMessage("You have completed Lesson " + str(data['lessonnum']) + ": " + data['name'] #+ ". Text one of the following options.")
+#    sendMessage("L - Lesson\nQ - Quiz\nG - Grades\nP - Points\nS - Settings")
+#    print "Done!"
 
 runLesson()
+
+
+
+# BUG - trailing spaces in prompts cause sent message mismatch error
