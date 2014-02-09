@@ -53,3 +53,8 @@ class TestEngine(unittest.TestCase):
         new_state, messages = self.x.process_message(2, "b")
         self.assertEqual(new_state, 2)
         self.assertEqual(messages, ["Wrong!"])
+
+    def test_process_last_correct_answer(self):
+        new_state, messages = self.x.process_message(2, "a")
+        self.assertEqual(new_state, 3)
+        self.assertEqual(messages, ["That is correct.", "Lesson Complete!"])

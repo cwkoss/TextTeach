@@ -21,10 +21,12 @@ class Engine:
                 messages += ["Invalid response, try again."]
                 return state, messages
 
-        while True:
+        while state < len(self.lesson['msgChunks']):
             messages += self.lesson['msgChunks'][state]['prompts']
             if self.lesson['msgChunks'][state]['type'] == "multi":
                 break
             state += 1
+        else:
+            messages.append("Lesson Complete!")
 
         return state, messages
