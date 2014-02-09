@@ -5,4 +5,4 @@ source $BIN_DIR/.envrc
 cd $PROJ_DIR
 pwd
 python -m unittest discover --pattern='*_test.py'
-pep8 --max-line-length=100 engine.py
+pep8 --max-line-length=100 engine.py engine_test.py
