@@ -1,5 +1,6 @@
 import webapp2
 import json
+import logging
 
 from google.appengine.api import memcache
 
@@ -17,6 +18,7 @@ class ReceiveSMS(webapp2.RequestHandler):
 
     def post(self):
         message = json.dumps(dict(self.request.params))
+        logging.info("Twillio Data: %s", message)
         memcache.set(key="data", value=message)
 
 
