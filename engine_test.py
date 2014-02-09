@@ -91,15 +91,15 @@ class TestEngine(unittest.TestCase):
     def setUp(self):
         self.x = Engine(simple_lesson)
 
-        def test_new(self):
-            self.assertIsNotNone(self.x)
+    def test_new(self):
+        self.assertIsNotNone(self.x)
 
-        def test_process_first(self):
-            new_state, messages = self.x.process_message()
-            self.assertEqual(new_state, 1)
-            self.assertEqual(messages, ["First prompt", "The first question."])
+    def test_process_first(self):
+        new_state, messages = self.x.process_message()
+        self.assertEqual(new_state, 1)
+        self.assertEqual(messages, ["First prompt", "The first question."])
 
-        def test_process_correct_answer(self):
-            new_state, messages = self.x.process_message(1, "a")
-            self.assertEqual(new_state, 1)
-            self.assertEqual(messages, ["First prompt", "The first question."])
+    def test_process_correct_answer(self):
+        new_state, messages = self.x.process_message(1, "a")
+        self.assertEqual(new_state, 1)
+        self.assertEqual(messages, ["First prompt", "The first question."])
