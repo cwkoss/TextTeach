@@ -8,7 +8,15 @@ simple_lesson = {
 	"msgChunks": [
 		{"type": "section",
 		 "prompts": ["First prompt"]
-		 }
+		},
+		{"type": "multi",
+		  "prompts": ["The first question."],
+		  "correctResponses": ["a"],
+		  "responses": {
+		  	"a": {"prompts": ["That is correct."]},
+		  	"b": {"prompts": ["Wrong!"]},
+		  }
+		},
 	]
 }
 
@@ -88,4 +96,4 @@ class TestEngine(unittest.TestCase):
 	def test_call_engine(self):
 		new_state, messages = self.x.process_message()
 		self.assertEqual(new_state, 1)
-		self.assertEqual(messages, ["First prompt"])
+		self.assertEqual(messages, ["First prompt", "The first question."])

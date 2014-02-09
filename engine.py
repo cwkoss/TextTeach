@@ -8,5 +8,13 @@ class Engine:
 
 	def process_message(self, state=0, message=""):
 		logging.info("Called with state=%s and message='%s'", str(state), message)
-		messages = self.lesson['msgChunks'][state]['prompts']
-		return state + 1, messages
+		#messages = 
+
+		messages = []
+		while True:
+			messages += self.lesson['msgChunks'][state]['prompts']
+			if self.lesson['msgChunks'][state]['type'] == "multi":
+				break
+			state += 1
+
+		return state, messages
