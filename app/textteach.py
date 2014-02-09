@@ -1,12 +1,14 @@
 import webapp2
+import json
+
 from google.appengine.api import memcache
 
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write("Hello, student.")
-        self.response.write(memcache.get(key='body'))
+        self.response.write("Hello, student.\n")
+        self.response.write(memcache.get(key='data'))
 
 
 class ReceiveSMS(webapp2.RequestHandler):
@@ -14,8 +16,8 @@ class ReceiveSMS(webapp2.RequestHandler):
         self.post()
 
     def post(self):
-        message = self.request.get('Body')
-        memcache.set(key="body", value=message)
+        message = json.dumps(dict(self.request.params))
+        memcache.set(key="data", value=message)
 
 
 application =webapp2.WSGIApplication([
