@@ -58,3 +58,8 @@ class TestEngine(unittest.TestCase):
         new_state, messages = self.x.process_message(2, "a")
         self.assertEqual(new_state, 3)
         self.assertEqual(messages, ["That is correct.", "Lesson Complete!"])
+
+    def test_process_invalid_response(self):
+        new_state, messages = self.x.process_message(1, "x")
+        self.assertEqual(new_state, 1)
+        self.assertEqual(messages, ["Invalid response, try again."])
