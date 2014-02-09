@@ -1,1 +1,2 @@
 python -m unittest discover . '*_test.py'
+pep8 --max-line-length=100 engine.py
