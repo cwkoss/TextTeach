@@ -15,8 +15,8 @@ simple_lesson = {
             "prompts": ["The first question."],
             "correctResponses": ["a"],
             "responses": {
-            "a": {"prompts": ["That is correct."]},
-            "b": {"prompts": ["Wrong!"]},
+                "a": {"prompts": ["That is correct."]},
+                "b": {"prompts": ["Wrong!"]},
             }
         },
         {
@@ -24,8 +24,8 @@ simple_lesson = {
             "prompts": ["The second question."],
             "correctResponses": ["a"],
             "responses": {
-            "a": {"prompts": ["That is correct."]},
-            "b": {"prompts": ["Wrong!"]},
+                "a": {"prompts": ["That is correct."]},
+                "b": {"prompts": ["Wrong!"]},
             }
         },
     ]

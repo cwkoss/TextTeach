@@ -10,9 +10,9 @@ class Engine:
     def process_message(self, state=0, message=""):
         logging.info("Called with state=%s and message='%s'", str(state), message)
         messages = []
-        
+
         if self.lesson['msgChunks'][state]['type'] == "multi":
-           if self.lesson['msgChunks'][state]['responses'][message]:
+            if self.lesson['msgChunks'][state]['responses'][message]:
                 messages += self.lesson['msgChunks'][state]['responses'][message]['prompts']
                 if message not in self.lesson['msgChunks'][state]["correctResponses"]:
                     return state, messages
