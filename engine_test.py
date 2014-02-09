@@ -45,9 +45,9 @@ class TestEngine(unittest.TestCase):
         self.assertEqual(messages, ["First prompt", "The first question."])
 
     def test_process_correct_answer(self):
-        new_state, messages = self.x.process_message(2, "a")
-        self.assertEqual(new_state, 3)
-        self.assertEqual(messages, ["That is correct."])
+        new_state, messages = self.x.process_message(1, "a")
+        self.assertEqual(new_state, 2)
+        self.assertEqual(messages, ["That is correct.", "The second question."])
 
     def test_process_incorrect_answer(self):
         new_state, messages = self.x.process_message(2, "b")

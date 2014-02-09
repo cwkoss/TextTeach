@@ -16,6 +16,10 @@ class Engine:
                 messages += self.lesson['msgChunks'][state]['responses'][message]['prompts']
                 if message not in self.lesson['msgChunks'][state]["correctResponses"]:
                     return state, messages
+                state += 1
+            else:
+                messages += ["Invalid response, try again."]
+                return state, messages
 
         while True:
             messages += self.lesson['msgChunks'][state]['prompts']
