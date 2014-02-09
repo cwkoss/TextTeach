@@ -12,7 +12,7 @@ class Engine(object):
         messages = []
 
         if self.lesson['msgChunks'][state]['type'] == "multi":
-            if self.lesson['msgChunks'][state]['responses'][message]:
+            if message in self.lesson['msgChunks'][state]['responses']:
                 messages += self.lesson['msgChunks'][state]['responses'][message]['prompts']
                 if message not in self.lesson['msgChunks'][state]["correctResponses"]:
                     return state, messages
