@@ -3,7 +3,7 @@ import logging
 logging.getLogger().setLevel(logging.INFO)
 
 
-class Engine:
+class Engine(object):
     def __init__(self, lesson):
         self.lesson = lesson
 
