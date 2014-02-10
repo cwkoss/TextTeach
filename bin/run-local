@@ -1,0 +1,6 @@
+#!/bin/bash
+BIN_DIR="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
+source $BIN_DIR/.envrc
+
+cd $PROJ_DIR
+dev_appserver.py app
