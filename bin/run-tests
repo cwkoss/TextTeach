@@ -5,4 +5,3 @@ source $BIN_DIR/.envrc
 cd $PROJ_DIR/app
 python -m unittest discover -v --pattern='*_test.py'
 pep8 --max-line-length=100 *.py
-
