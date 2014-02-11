@@ -32,7 +32,7 @@ class Controller(object):
         eng = Engine(lesson)
         session.state, messages = eng.process_message(session.state, message)
         if session.state == -1:
-            ndb.delete(session)
+            session.key.delete()
         else:
             session.put()
         self.reply_with(sender, messages)
