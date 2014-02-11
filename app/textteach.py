@@ -10,8 +10,8 @@ from controller import Controller
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write("Hello, student.\n")
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write("Hello, student.<input type='button' value='hi'>\n")
         # self.response.write(memcache.get(key='data'))
 
 

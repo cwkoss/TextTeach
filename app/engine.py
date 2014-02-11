@@ -28,5 +28,6 @@ class Engine(object):
             state += 1
         else:
             messages.append("Lesson Complete!")
+            state = -1
 
         return state, messages
