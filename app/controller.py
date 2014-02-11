@@ -31,7 +31,10 @@ class Controller(object):
             raise Error("No such lesson: %s" % session.lesson_id)
         eng = Engine(lesson)
         session.state, messages = eng.process_message(session.state, message)
-        session.put()
+        if session.state == -1:
+            ndb.delete(session)
+        else:
+            session.put()
         self.reply_with(sender, messages)
 
     def reply_with(self, sender, messages):
