@@ -1,3 +1,6 @@
-venv
+ttenv
 *.pyc
 *~
+app/twilio
+app/httplib2
+app/six.py

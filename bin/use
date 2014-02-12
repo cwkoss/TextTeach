@@ -1,0 +1,9 @@
+#!/bin/bash
+BIN_DIR="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
+source $BIN_DIR/.envrc
+
+source $ENV_DIR/bin/activate
+echo "Type 'deactivate' to stop using environment."
+
+alias home="cd $PROJ_DIR"
+export PATH="$BIN_DIR:$PATH"
