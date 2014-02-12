@@ -3,7 +3,8 @@ BIN_DIR="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 source $BIN_DIR/.envrc
 
 cd $PROJ_DIR/app
-python -m unittest discover -v --pattern='*_test.py'
+test_runner.py $AE_PATH $PROJ_DIR/app
+# python -m unittest discover -v --pattern='*_test.py'
 
-TT_FILES="controller.py controller_test.py engine.py engine_test.py textteach.py"
-pep8 --max-line-length=100 $TT_FILES
+TT_FILES="controller.py engine.py textteach.py tests/*.py"
+pep8 -v --max-line-length=100 $TT_FILES
