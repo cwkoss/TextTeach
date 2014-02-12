@@ -3,7 +3,13 @@ import logging
 
 from google.appengine.ext import ndb
 
+from twilio.rest import TwilioRestClient
+
 from engine import Engine
+
+ACCOUNT_SID = "AC94743d49300d49a696cf09bfef229c82"
+AUTH_TOKEN = "459bb4d749bdff002e45d44d33a4ad7f"
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 
 def main():
@@ -35,11 +41,16 @@ class Controller(object):
             session.key.delete()
         else:
             session.put()
-        self.reply_with(sender, messages)
+        self.send_SMS_replies(sender, messages)
 
-    def reply_with(self, sender, messages):
+    def send_SMS_replies(self, recipient, messages):
         for message in messages:
-            logging.info("Reply with: %s", message)
+            logging.info("Replying with: %s", message)
+            client.messages.create(
+                to=recipient,
+                from_="+12067454564",
+                body=message
+            )
 
 
 class Student(ndb.Model):
