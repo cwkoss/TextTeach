@@ -1,15 +1,23 @@
 #!/usr/bin/env python
 # coding=utf-8
-
 import unittest
+from mock import Mock, patch, call
+
+from google.appengine.ext import testbed
+
 # TODO: Move test data to commonly imported file from both tests.
 import engine_test
-from controller import Controller
+
+import controller
 
 
 class TestController(unittest.TestCase):
     def setUp(self):
-        self.c = Controller()
+        self.testbed = testbed.Testbed()
+        self.testbed.activate()
+        self.testbed.init_datastore_v3_stub()
+        self.testbed.init_memcache_stub()
+        self.c = controller.Controller()
         self.c.add_lesson('default', engine_test.simple_lesson)
 
     def test_new(self):
@@ -19,5 +27,13 @@ class TestController(unittest.TestCase):
         self.assertEqual(len(self.c.lessons), 1)
 
     def test_message(self):
-        self.c.on_message(sender="mike", message="")
-        # Add some asserts
+        test_number = '4255551212'
+        with patch('controller.client') as client:
+            self.c.on_message(sender=test_number, message="")
+            self.assertEqual(client.mock_calls,
+                             [call.messages.create(body='First prompt',
+                                                   to=test_number,
+                                                   from_='+12067454564'),
+                              call.messages.create(body='The first question.',
+                                                   to=test_number,
+                                                   from_='+12067454564')])

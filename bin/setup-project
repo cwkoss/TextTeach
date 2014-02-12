@@ -10,7 +10,7 @@ if [ "$REPLY" == "y" ]; then
     virtualenv --distribute "$ENV_DIR"
     source $BIN_DIR/use
 
-    pip install twilio unittest2
+    pip install twilio unittest2 mock
 
     # Symlink twilio packages (will also upload to App Engine)
     for package in twilio httplib2 six.py; do

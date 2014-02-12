@@ -28,5 +28,4 @@ if __name__ == '__main__':
         sys.exit(1)
     SDK_PATH = args[0]
     TEST_PATH = args[1]
-    print TEST_PATH
     main(SDK_PATH, TEST_PATH)
