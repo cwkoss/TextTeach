@@ -28,15 +28,16 @@ class Controller(object):
         self.lessons[lesson_id] = lesson
 
     def on_message(self, sender=None, message=None):
+        logging.info("Recieved message from %s: %s", sender, message)
         if sender is None or message is None or message == "":
             raise Error("Invalid sender or message.")
         #Admin start command
         if message.split(' ')[0].lower() == "start" and len(message) == 16:
-            student = Student.ensure_student(phone=message.split(' ')[1])
-            session = Session.ensure_session(student.get_id())
-        else:
-            student = Student.ensure_student(phone=sender)
-            session = Session.ensure_session(student.get_id())
+            sender = message.split(' ')[1]
+            logging.info("AdminStart for #: %s", sender)
+            message = " "
+        student = Student.ensure_student(phone=sender)
+        session = Session.ensure_session(student.get_id())
         lesson = self.lessons.get(session.lesson_id)
         if lesson is None:
             raise Error("No such lesson: %s" % session.lesson_id)
