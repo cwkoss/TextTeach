@@ -26,7 +26,12 @@ class ReceiveSMS(webapp2.RequestHandler):
 
         c = Controller()
         import engine_test
-        c.add_lesson('default', engine_test.simple_lesson)
+
+        json_data = open('lesson.json')
+        data = json.load(json_data)
+        json_data.close()
+
+        c.add_lesson('default', data)
         c.on_message(self.request.get('From'), self.request.get('Body'))
 
 
