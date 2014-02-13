@@ -25,7 +25,7 @@ class ReceiveSMS(webapp2.RequestHandler):
         # memcache.set(key="data", value=message)
 
         c = Controller()
-        import engine_test
+        #import engine_test
 
         json_data = open('lesson.json')
         data = json.load(json_data)
