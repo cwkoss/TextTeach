@@ -50,7 +50,7 @@ class Controller(object):
 
     def send_SMS_replies(self, recipient, messages):
         for message in messages:
-            logging.info("Replying with: %s", message)
+            logging.info("Sending to %s: %s", recipient, message)
             # TODO: Is this from number really needed?
             client.messages.create(
                 to=recipient,
