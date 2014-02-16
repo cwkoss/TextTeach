@@ -29,7 +29,7 @@ class TestController(unittest.TestCase):
     def test_message(self):
         test_number = '4255551212'
         with patch('controller.client') as client:
-            self.c.on_message(sender=test_number, message="start")
+            self.c.on_message(sender=test_number, message=" ")
             self.assertEqual(client.mock_calls,
                              [
                                  call.messages.create(body='First prompt\n\nThe first question.',
