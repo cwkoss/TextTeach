@@ -46,9 +46,33 @@ class Engine(object):
     def get_prompts_from_response(self, response):
         return self.get_current_responses()[response]['prompts']
 
+    def advance_messages(self):
+        messages = []
+        while not self.is_lesson_complete():
+            messages += self.get_current_state_prompts()
+            if self.get_current_type() == "multi":
+                break
+            self.set_next_state()
+        else:
+            messages.append("Lesson Complete!")
+        return messages
+
     @staticmethod
     def clean_input(s):
         return s.strip().lower()
+
+    def help_command(self, words):
+        """ This command returns help about commands. """
+        return self.state, ["This is help."]
+
+    def restart_command(self, words):
+        """ Restart the current lesson. """
+        self.set_state(0)
+        return self.repeat_command([])
+
+    def repeat_command(self, words):
+        """ Repeat the last question. """
+        return self.state, self.advance_messages()
 
     def process_message(self, state=0, message=""):
         messages = []
@@ -56,6 +80,13 @@ class Engine(object):
         message = self.clean_input(message)
         logging.info("Called with state=%s and message='%s'", str(state), message)
         self.set_state(state)
+
+        words = message.split(' ')
+        command_func_name = words[0] + '_command'
+        if command_func_name in self.__class__.__dict__:
+            fn = self.__class__.__dict__[command_func_name]
+            if callable(fn):
+                return fn(self, words[1:])
 
         if self.get_current_type() == "multi":
             # Just look at initial letter of response
@@ -72,12 +103,6 @@ class Engine(object):
 
             self.set_next_state()
 
-        while not self.is_lesson_complete():
-            messages += self.get_current_state_prompts()
-            if self.get_current_type() == "multi":
-                break
-            self.set_next_state()
-        else:
-            messages.append("Lesson Complete!")
+        messages += self.advance_messages()
 
         return self.state, messages
