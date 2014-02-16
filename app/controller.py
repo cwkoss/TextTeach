@@ -52,7 +52,7 @@ class Controller(object):
         self.send_SMS_replies(sender, messages)
 
     def send_SMS_replies(self, recipient, messages):
-        joined_message = "\n".join(messages)
+        joined_message = "\n\n".join(messages)
         self.send_to_twilio(recipient, joined_message)
 
     @staticmethod

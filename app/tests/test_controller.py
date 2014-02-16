@@ -32,7 +32,7 @@ class TestController(unittest.TestCase):
             self.c.on_message(sender=test_number, message="start")
             self.assertEqual(client.mock_calls,
                              [
-                                 call.messages.create(body='First prompt\nThe first question.',
+                                 call.messages.create(body='First prompt\n\nThe first question.',
                                                       to=test_number,
                                                       from_='+12067454564'),
                              ])
