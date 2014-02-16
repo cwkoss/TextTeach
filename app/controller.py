@@ -44,7 +44,7 @@ class Controller(object):
         if lesson is None:
             raise Error("No such lesson: %s" % session.lesson_id)
         eng = Engine(lesson)
-        session.state, messages = eng.process_message(session.state, message[0].lower())
+        session.state, messages = eng.process_message(session.state, message)
         if session.state == -1:
             session.key.delete()
         else:
