@@ -37,7 +37,7 @@ class Controller(object):
         if message.split(' ')[0].lower() == "start":
             sender = message.split(' ')[1]
             logging.info("AdminStart for #: %s", sender)
-            message = " "
+            message = "restart"
         student = Student.ensure_student(phone=sender)
         session = Session.ensure_session(student.get_id())
         lesson = self.lessons.get(session.lesson_id)
