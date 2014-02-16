@@ -9,6 +9,8 @@ from engine import Engine
 
 ACCOUNT_SID = "AC94743d49300d49a696cf09bfef229c82"
 AUTH_TOKEN = "459bb4d749bdff002e45d44d33a4ad7f"
+FROM_PHONE = "+12067454564"
+
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 
@@ -50,14 +52,16 @@ class Controller(object):
         self.send_SMS_replies(sender, messages)
 
     def send_SMS_replies(self, recipient, messages):
-        for message in messages:
-            logging.info("Sending to %s: %s", recipient, message)
-            # TODO: Is this from number really needed?
-            client.messages.create(
-                to=recipient,
-                from_="+12067454564",
-                body=message
-            )
+        joined_message = "\n".join(messages)
+        self.send_to_twilio(recipient, joined_message)
+
+    @staticmethod
+    def send_to_twilio(recipient, message):
+        # There is a bug in SMS stack that corrupts 161 character messages!
+        if len(message) == 161:
+            message += "."
+        logging.info("Sending: %s", message)
+        client.messages.create(to=recipient, from_=FROM_PHONE, body=message)
 
 
 class Student(ndb.Model):
