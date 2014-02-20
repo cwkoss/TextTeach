@@ -3,7 +3,7 @@
   "lessonnum":1,
   "msgChunks": [
           {"type":"sectmsg",
-           "prompts":["This your daily 5-question SAT vocabulary quiz. Text H for a hint at any time."]},
+           "prompts":["This is your daily 5-question SAT vocabulary quiz. Text H for a hint at any time."]},
           {"type":"multi",
            "prompts":["1. After observing several vicious territorial fights, Jane Goodall had to revise her earlier opinion that these particular primates were always ------ animals.", 
                     "A. ignorant\nB. inquisitive\nC. responsive\nD. peaceful\nE. cruel"],
