@@ -54,7 +54,7 @@ class Engine(object):
                 break
             self.set_next_state()
         else:
-            messages.append("Lesson Complete!")
+            messages.append("Quiz Complete!")
         return messages
 
     @staticmethod
