@@ -57,7 +57,7 @@ class TestEngine(unittest.TestCase):
     def test_process_last_correct_answer(self):
         new_state, messages = self.x.process_message(2, "a")
         self.assertEqual(new_state, -1)
-        self.assertEqual(messages, ["That is correct.", "Lesson Complete!"])
+        self.assertEqual(messages, ["That is correct.", "Quiz Complete!"])
 
     def test_process_invalid_response(self):
         new_state, messages = self.x.process_message(1, "x")
