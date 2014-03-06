@@ -63,7 +63,7 @@ class Controller(object):
         student = Student.ensure_student(phone=recipient)
         try:
             student.totalMsgSent
-        except: 
+        except:
             student.totalMsgSent = 1
         else:
             student.totalMsgSent += 1
