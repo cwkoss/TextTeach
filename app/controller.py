@@ -40,6 +40,13 @@ class Controller(object):
             logging.info("AdminStart for #: %s", sender)
             message = "restart"
         student = Student.ensure_student(phone=sender)
+        try:
+            student.totalMsgReceived
+        except:
+            student.totalMsgReceived = 1
+        else:
+            student.totalMsgReceived += 1
+        student.put()
         session = Session.ensure_session(student.get_id())
         lesson = self.lessons.get(session.lesson_id)
         if lesson is None:
@@ -53,6 +60,20 @@ class Controller(object):
         self.send_SMS_replies(sender, messages)
 
     def send_SMS_replies(self, recipient, messages):
+        student = Student.ensure_student(phone=recipient)
+        try:
+            student.totalMsgSent
+        except: 
+            student.totalMsgSent = 1
+        else:
+            student.totalMsgSent += 1
+        try:
+            student.totalSMSSent
+        except:
+            student.totalSMSSent = len(messages)
+        else:
+            student.totalSMSSent += len(messages)
+        student.put()
         joined_message = "\n\n".join(messages)
         self.send_to_twilio(recipient, joined_message)
 
@@ -67,7 +88,12 @@ class Controller(object):
 
 class Student(ndb.Model):
     phone = ndb.StringProperty()
-    createdDateTime = ndb.DateTimeProperty()
+    createdDateTime = ndb.FloatProperty()  # users with 'None' created before 11:42 3/6/14
+    totalMsgSent = ndb.IntegerProperty()
+    totalMsgReceived = ndb.IntegerProperty()
+    totalSMSSent = ndb.IntegerProperty()
+    multiAttempts = ndb.IntegerProperty()
+    multiCorrectFirst = ndb.IntegerProperty()
 
     @classmethod
     def ensure_student(cls, phone=None):
@@ -75,7 +101,13 @@ class Student(ndb.Model):
             raise Error("Missing phone.")
         student = Student.query(Student.phone == phone).get()
         if student is None:
-            student = Student(phone=phone, createdDateTime=time.time())
+            student = Student(phone=phone,
+                              createdDateTime=time.time(),
+                              totalMsgSent=0,
+                              totalMsgReceived=0,
+                              totalSMSSent=0,
+                              multiAttempts=0,
+                              multiCorrectFirst=0)
             student.put()
         return student
 
