@@ -38,7 +38,7 @@ class Controller(object):
         if message.split(' ')[0].lower() == "start":
             sender = "+1" + message.split(' ')[1]
             logging.info("AdminStart for #: %s", sender)
-            message = "hi"
+            message = "AdminStart"
         student = Student.ensure_student(phone=sender)
         try:
             student.totalMsgReceived
