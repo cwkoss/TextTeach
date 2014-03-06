@@ -34,11 +34,11 @@ class Controller(object):
         logging.info("Recieved message from %s: %s", sender, message)
         if sender is None or message is None or message == "":
             raise Error("Invalid sender or message.")
-        # Admin start command requires 10 digit phone prefixed with "+1"
+        # Admin start command requires 10 digit phone NOT prefixed with "+1"
         if message.split(' ')[0].lower() == "start":
-            sender = message.split(' ')[1]
+            sender = "+1" + message.split(' ')[1]
             logging.info("AdminStart for #: %s", sender)
-            message = "restart"
+            message = "hi"
         student = Student.ensure_student(phone=sender)
         try:
             student.totalMsgReceived

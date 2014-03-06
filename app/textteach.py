@@ -4,14 +4,18 @@ import logging
 import webapp2
 
 from google.appengine.api import memcache
+from google.appengine.ext import ndb
 
 from controller import Controller
-
+from controller import Student
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
-        self.response.write("Hello, student.<input type='button' value='hi'>\n")
+        self.response.write("Hello, student.")
+        logging.info(Student.ensure_student('+14252467703').totalSMSSent)
+        for x in Student.query().iter():
+            logging.info(x.phone)
         # self.response.write(memcache.get(key='data'))
 
 
