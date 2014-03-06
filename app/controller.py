@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import logging
+import time
 
 from google.appengine.ext import ndb
 
@@ -66,6 +67,7 @@ class Controller(object):
 
 class Student(ndb.Model):
     phone = ndb.StringProperty()
+    createdDateTime = ndb.DateTimeProperty()
 
     @classmethod
     def ensure_student(cls, phone=None):
@@ -73,7 +75,7 @@ class Student(ndb.Model):
             raise Error("Missing phone.")
         student = Student.query(Student.phone == phone).get()
         if student is None:
-            student = Student(phone=phone)
+            student = Student(phone=phone, createdDateTime=time.time())
             student.put()
         return student
 
