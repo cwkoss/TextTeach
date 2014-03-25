@@ -1,16 +1,6 @@
 {	"sections": [{
 					"type": "instructional",
-					"body": "Welcome to Learning Hiragana Japanese Characters.  \\\nHiragana means \\\"plain script\\\" in Japanese and is the language's 
-							most basic phonetic alphabet. Though Japanese also uses Katakana, for writing foreign words, and Kanji, ideograms 
-							borrowed from the Chinese language, Hiragana can be used to write all native Japanese words so it is an essential 
-							foundation to learning Japanese vocabulary. \\\n\\\n
-							Basic Vowels.  Japanese has 5 basic vowels:\\\n
-							あ - a - pronounced \\\"ah\\\", like the vowel in \\\"car\\\"\\\n
-							い - i - pronounced \\\"ee\\\", like \\\"bee\\\" or \\\"key\\\"\\\n
-							う - u - pronounced \\\"u\\\", like in \\\"moo\\\" or \\\"tube\\\"\\\n
-							え - e - pronounced \\\"eh\\\", like in \\\"end\\\" or \\\"bet\\\"\\\n
-							お - o - pronounced \\\"oh\\\", like in \\\"joe\\\" or \\\"go\\\"\\\n
-							\\\n\\\nあい (ai) is the Japanese word for \\\"love\\\"."},
+					"body": "Welcome to Learning Hiragana"},
 				{
 					"type":"add-question",
 					"prompt":"Match the Japanese character with the sound it makes:\\\n\\\nあ",
@@ -46,14 +36,7 @@
 				},
 				{
 					"type": "instructional",
-					"body": "Consonant sounds are combined with the basic vowels to make more characters.\\\n\\\n
-								\\\"K\\\" characters:
-								か - ka - pronounced \\\"kah\\\"
-								き - ki - pronounced \\\"key\\\"
-								く - ku - pronounced \\\"coo\\\"
-								け - ke - as in \\\"okay\\\"
-								こ - ko - as in \\\"coal\\\"\\\n\\\n
-								かく (kaku) is the Japanese word for \\\"write\\\""},
+					"body": "Consonant sounds are combined"},
 				{
 					"type":"add-question",
 					"prompt":"Match the Japanese character with the sound it makes:\\\n\\\nか",

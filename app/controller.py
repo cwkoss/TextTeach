@@ -6,7 +6,7 @@ import json
 from google.appengine.ext import ndb
 
 from twilio.rest import TwilioRestClient
-
+# -*- coding:utf-8
 from engine import Engine
 
 ACCOUNT_SID = "AC94743d49300d49a696cf09bfef229c82"
@@ -57,7 +57,7 @@ class Controller(object):
             json_data = open('hiragana.json')
             data = json.load(json_data)
             json_data.close()
-            eng = Engine(data.replace("\\", "\\\\"))
+            eng = Engine(data)
             session.state, messages = eng.process_message_dev(session.state, message)
         else:
             eng = Engine(lesson)

@@ -108,4 +108,4 @@ class Engine(object):
         return self.state, messages
 
     def process_message_dev(self, state=0, message=""):
-        return 0, [self.lesson["sections"][0]["body"]]
+        return 0, ["dev"]
