@@ -30,10 +30,10 @@ class MainPage(webapp2.RequestHandler):
         # tempstr += "<td>MultChoice Attempts</td><td>MultChoice Correct First Try</td>"
         tempstr += "<td>Total Msg Received</td><td>"
         tempstr += "Total Msgs Sent</td><td>Total SMS Msgs Sent</td></tr></b>"
-        logging.info(Student.ensure_student('+14252467703').totalSMSSent)
+        #logging.info(Student.ensure_student('+14252467703').totalSMSSent)
         for student in Student.query().iter():
             tempstr += "<tr>"
-            logging.info(student.phone)
+            #logging.info(student.phone)
             tempstr += "<td>" + student.phone + "</td>>"
             tempstr += "<td>" + str(time.ctime(student.createdDateTime)) + "</td>>"
             # tempstr += "<td>" + str(student.multiAttempts) + "</td>>"

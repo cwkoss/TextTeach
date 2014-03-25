@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import logging
 import time
+import json
 
 from google.appengine.ext import ndb
 
@@ -52,7 +53,15 @@ class Controller(object):
         if lesson is None:
             raise Error("No such lesson: %s" % session.lesson_id)
         eng = Engine(lesson)
-        session.state, messages = eng.process_message(session.state, message)
+        if(student.phone == "+14252467703"):
+            json_data = open('hiragana.json')
+            data = json.load(json_data)
+            json_data.close()
+            eng = Engine(data.replace("\\", "\\\\"))
+            session.state, messages = eng.process_message_dev(session.state, message)
+        else:
+            eng = Engine(lesson)
+            session.state, messages = eng.process_message(session.state, message)
         if session.state == -1:
             session.key.delete()
         else:
