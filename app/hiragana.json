@@ -1,6 +1,6 @@
 {	"sections": [{
 					"type": "instructional",
-					"body": "Welcome to Learning Hiragana"},
+					"body": "Welcome to Learning Hiragana Characters.\n\nHiragana means\"plain script\" in Japanese and is the language's most basic phoenetic alphabet."},
 				{
 					"type":"add-question",
 					"prompt":"Match the Japanese character with the sound it makes:\\\n\\\nあ",
