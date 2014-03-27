@@ -107,5 +107,7 @@ class Engine(object):
 
         return self.state, messages
 
-    def process_message_dev(self, state=0, message=""):
-        return 0, ["dev"]
+    def process_message_dev(self, message, student):
+        student.questionHistory = {"foo":"bar"}
+        student.put()
+        return [self.lesson['sections'][0]["body"]]
