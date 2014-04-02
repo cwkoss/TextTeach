@@ -3,71 +3,87 @@
      "body": "Welcome to Learning Hiragana Japanese Characters.\n\nBasic Vowels.  Japanese has 5 basic vowels:\nあ - a - pronounced \"ah\", like the vowel in \"car\"\nい - i - pronounced \"ee\", like \"bee\" or \"key\"\n う - u - pronounced \"u\", like in \"moo\" or \"tube\"\nえ - e - pronounced \"eh\", like in \"end\" or \"bet\"\nお - o - pronounced \"oh\", like in \"joe\" or \"go\"\n\n\nあい (ai) is the Japanese word for \"love\"."},
     {
      "type":"add-question",
+     "id":"hiragana-a",
      "prompt":"Match the Japanese character with the sound it makes:\n\nあ",
      "correct-answer": "a",
      "distractors": ["i","u","e","o"]
     },
     {
      "type":"add-question",
+     "id":"hiragana-i",
      "prompt":"Match the Japanese character with the sound it makes:\n\nい",
      "correct-answer": "i",
      "distractors": ["a","u","e","o"]
     },
     {
      "type":"add-question",
+     "id":"hiragana-u",
      "prompt":"Match the Japanese character with the sound it makes:\n\nう",
      "correct-answer": "u",
      "distractors": ["a","i","e","o"]
     },
     {
      "type":"add-question",
+     "id":"hiragana-e",
      "prompt":"Match the Japanese character with the sound it makes:\n\nえ",
      "correct-answer": "e",
      "distractors": ["a","u","i","o"]
     },
     {
      "type":"add-question",
+     "id":"hiragana-o",
      "prompt":"Match the Japanese character with the sound it makes:\n\nお",
      "correct-answer": "o",
      "distractors": ["a","u","e","i"]
     },
     {
-     "type":"review"
+     "type":"review",
+     "threshold": 50
     },
     {
      "type": "instructional",
      "body": "Consonant sounds are combined with the basic vowels to make more characters.\n\n\"K\" characters:\nか - ka - pronounced \"kah\"\nき - ki - pronounced \"key\"\nく - ku - pronounced \"coo\"\nけ - ke - as in \"okay\"\nこ - ko - as in \"coal\"\n\nかく (kaku) is the Japanese word for \"write\""},
     {
      "type":"add-question",
+     "id":"hiragana-ka",
      "prompt":"Match the Japanese character with the sound it makes:\n\nか",
      "correct-answer": "ka",
      "distractors": ["ki","ku","ke","ko", "a"]
     },
     {
      "type":"add-question",
+     "id":"hiragana-ki",
      "prompt":"Match the Japanese character with the sound it makes:\n\nき",
      "correct-answer": "ki",
      "distractors": ["ka","ku","ke","ko", "i"]
     },
     {
      "type":"add-question",
+     "id":"hiragana-ku",
      "prompt":"Match the Japanese character with the sound it makes:\n\nく",
      "correct-answer": "ku",
      "distractors": ["ki","ka","ke","ko", "u"]
     },
     {
      "type":"add-question",
+     "id":"hiragana-ke",
      "prompt":"Match the Japanese character with the sound it makes:\n\nけ",
      "correct-answer": "ke",
      "distractors": ["ki","ku","ka","ko", "e"]
     },
     {
      "type":"add-question",
+     "id":"hiragana-ko",
      "prompt":"Match the Japanese character with the sound it makes:\n\nこ",
      "correct-answer": "ko",
      "distractors": ["ki","ku","ke","ka", "o"]
     },
     {
-     "type":"review"
+     "type":"review",
+     "threshold": 100
+    },
+    {
+     "type":"review",
+     "threshold": 150
     }]
 }

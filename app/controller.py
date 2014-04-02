@@ -59,8 +59,8 @@ class Controller(object):
             json_data.close()
             eng = Engine(data)
             messages = eng.process_message_dev(message, student)
-            logging.info("Student's foo: %s" % student.questionHistory['foo'])
-            student.put()
+            #logging.info("Student's foo: %s" % student.questionHistory['foo'])
+
         else:
             eng = Engine(lesson)
             session.state, messages = eng.process_message(session.state, message)
@@ -107,6 +107,7 @@ class Student(ndb.Model):
     multiCorrectFirst = ndb.IntegerProperty()
     sectionIndex = ndb.IntegerProperty()
     questionHistory = ndb.JsonProperty()
+    currentQuestion = ndb.JsonProperty()
 
     @classmethod
     def ensure_student(cls, phone=None):
@@ -120,7 +121,9 @@ class Student(ndb.Model):
                               totalMsgReceived=0,
                               totalSMSSent=0,
                               multiAttempts=0,
-                              multiCorrectFirst=0)
+                              multiCorrectFirst=0,
+                              sectionIndex=0,
+                              questionHistory={})
             student.put()
         return student
 

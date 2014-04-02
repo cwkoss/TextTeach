@@ -108,6 +108,91 @@ class Engine(object):
         return self.state, messages
 
     def process_message_dev(self, message, student):
-        student.questionHistory = {"foo":"bar"}
+        return_msgs = []
+        keep_looping = True
+        while keep_looping:
+            if self.lesson['sections'][student.sectionIndex]["type"] == "instructional":
+                return_msgs.append(self.lesson['sections'][student.sectionIndex]["body"])
+                student.sectionIndex += 1
+                logging.info("instructional")
+            elif self.lesson['sections'][student.sectionIndex]["type"] == "add-question":
+                student.questionHistory[self.lesson['sections'][student.sectionIndex]["id"]] = {"reviewcount": 0, "totalscore": 0, "history": []}
+                logging.info(student.questionHistory[self.lesson['sections'][student.sectionIndex]["id"]])
+                student.sectionIndex += 1
+            elif self.lesson['sections'][student.sectionIndex]["type"] == "review":
+                logging.info("Review" + str(student.currentQuestion) )
+
+                if student.currentQuestion is None:  # Initialize New Question
+                    next_q = self.get_lowest_score_q(student.questionHistory)
+                    student.currentQuestion = self.build_question_from_qid(next_q)
+                    return_msgs.append(student.currentQuestion['prompt'])
+                    return_msgs.append("A. " + student.currentQuestion["options"][0] + "\nB. " + student.currentQuestion["options"][1] + "\nC. " + student.currentQuestion["options"][2] + "\nD. " + student.currentQuestion["options"][3] + "\nE. " + student.currentQuestion["options"][4])
+                    logging.info("initalizing question: " + next_q)
+                    logging.info(student.currentQuestion['prompt'])
+                    break
+                else:
+                    #Complete Question if answer is correct
+                    mult_options = ["a", "b", "c", "d", "e"]
+                    if ["a", "b", "c", "d", "e"].count(message[0].lower()) > 0:
+                        if student.currentQuestion["correctIndex"] == mult_options.index(message[0].lower()):
+                            curr_id = student.currentQuestion["id"]
+                            student.questionHistory[curr_id]["reviewcount"] += 1
+
+                            mult_scores = [100,50,25,10]
+                            curr_score = mult_scores[min(3, student.currentQuestion["attempts"])]
+                            student.questionHistory[curr_id]["totalscore"] += curr_score
+                            return_msgs.append("Correct!")
+                            return_msgs.append("You earned " + str(curr_score) + " points!")
+                            student.currentQuestion = None
+                            if not self.below_threshold_scores_remain(student.questionHistory, self.lesson['sections'][student.sectionIndex]["threshold"]):
+                                student.sectionIndex += 1
+  
+                        else:
+                            return_msgs.append("Wrong, try again!")
+                            student.currentQuestion["attempts"] += 1
+                            break
+                    else:
+                        return_msgs.append("Message not understood")
+                        break
+                   
+    
+
+            if student.sectionIndex >= len(self.lesson['sections']):
+                break
         student.put()
-        return [self.lesson['sections'][0]["body"]]
+        #return [self.lesson['sections'][0]["body"]]
+        return return_msgs
+
+    def get_lowest_score_q(self, questionHistory):
+        lowest_score = -1
+        lowest_qs = []
+        for qid in questionHistory:
+            if lowest_score == -1:
+                lowest_score = questionHistory[qid]['totalscore']
+                lowest_qs.append(qid)
+            elif lowest_score > questionHistory[qid]['totalscore']:
+                lowest_score = questionHistory[qid]['totalscore']
+                lowest_qs = [qid]
+            elif lowest_score == questionHistory[qid]['totalscore']:
+                lowest_qs.append(qid)
+        # TODO add random selection of lowest qs
+        logging.info(lowest_qs[0])
+        return lowest_qs[0]
+
+    def below_threshold_scores_remain(self, questionHistory, threshold):
+        for qid in questionHistory:
+            if questionHistory[qid]['totalscore'] < threshold:
+                return True
+        return False
+
+    def build_question_from_qid(self, qid):
+        sect = -1
+        for section in self.lesson['sections']:
+            if section['type'] == "add-question":
+                if section['id'] == qid:
+                    sect = section
+                    break
+        options = [sect['correct-answer'], sect['distractors'][0], sect['distractors'][1], sect['distractors'][2], sect['distractors'][3]]
+        logging.info("length of options is " + str(len(options)))
+        return {"id": qid, "prompt": sect['prompt'], "options": options, "correctIndex": 0, "attempts": 0}
+
