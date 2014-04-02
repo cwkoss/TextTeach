@@ -53,7 +53,7 @@ class Controller(object):
         if lesson is None:
             raise Error("No such lesson: %s" % session.lesson_id)
         eng = Engine(lesson)
-        if(student.phone == "+14252467703"):
+        if(student.phone == "+14252467703" or student.phone == "+12068490631"):
             json_data = open('hiragana.json')
             data = json.load(json_data)
             json_data.close()

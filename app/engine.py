@@ -177,6 +177,7 @@ class Engine(object):
             elif lowest_score == questionHistory[qid]['totalscore']:
                 lowest_qs.append(qid)
         # TODO add random selection of lowest qs
+        random.shuffle(lowest_qs)
         logging.info(lowest_qs[0])
         return lowest_qs[0]
 
