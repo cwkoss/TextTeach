@@ -85,5 +85,21 @@
     {
      "type":"review",
      "threshold": 150
+    },
+    {
+     "type":"review",
+     "threshold": 200
+    },
+    {
+     "type":"review",
+     "threshold": 250
+    },
+    {
+     "type":"review",
+     "threshold": 300
+    },
+    {
+     "type":"review",
+     "threshold": 350
     }]
 }

@@ -1,4 +1,5 @@
 import logging
+import random
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -193,6 +194,13 @@ class Engine(object):
                     sect = section
                     break
         options = [sect['correct-answer'], sect['distractors'][0], sect['distractors'][1], sect['distractors'][2], sect['distractors'][3]]
+        logging.info(options)        
+        random.shuffle(options) 
+        logging.info(options)  
+        correct_index = -1
+        for i in xrange(len(options)):
+            if options[i] == sect['correct-answer']:
+                correct_index = i
         logging.info("length of options is " + str(len(options)))
-        return {"id": qid, "prompt": sect['prompt'], "options": options, "correctIndex": 0, "attempts": 0}
+        return {"id": qid, "prompt": sect['prompt'], "options": options, "correctIndex": correct_index, "attempts": 0}
 
