@@ -83,20 +83,337 @@
      "threshold": 100
     },
     {
+     "type": "instructional",
+     "body": "\"S\" characters:\nさ - sa - pronounced \"saw\"\nし - shi - pronounced \"she\"\nす - su - pronounced \"sue\"\nせ - se - pronounced \"say\"\nそ - so - pronounced \"sew\"\n\nすし (sushi) is a popular Japanese food\n\nBe careful - \"s\" and \"i\" sounds are combined to make \"shi\" NOT \"si\""},
+    {
+     "type":"add-question",
+     "id":"hiragana-sa",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nさ",
+     "correct-answer": "sa",
+     "distractors": ["shi","su","se","so", "a"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-shi",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nし",
+     "correct-answer": "shi",
+     "distractors": ["sa","su","se","so", "i"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-su",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nす",
+     "correct-answer": "su",
+     "distractors": ["shi","sa","se","so", "u"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-se",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nせ",
+     "correct-answer": "se",
+     "distractors": ["shi","su","sa","so", "e"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-so",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nそ",
+     "correct-answer": "so",
+     "distractors": ["shi","su","se","sa", "o"]
+    },
+    {
      "type":"review",
      "threshold": 150
+    },
+    {
+     "type": "instructional",
+     "body": "\"T\" characters:\nた - ta - like the begining of \"talk\"\nち - chi - like in \"cheetah\"\nつ - tsu - like the begining of \"tsunami\"\nて - te - like in \"take\"\nと - to - pronounced \"toe\"\n\nてつ (tetsu) is the Japanese word for iron.\n\nBe careful - \"t\" and \"i\" sounds are combined to make \"chi\" NOT \"ti\""},
+    {
+     "type":"add-question",
+     "id":"hiragana-ta",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nた",
+     "correct-answer": "ta",
+     "distractors": ["chi","tsu","te","to", "a"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-chi",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nち",
+     "correct-answer": "chi",
+     "distractors": ["ta","tsu","te","to", "i"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-tsu",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nつ",
+     "correct-answer": "tsu",
+     "distractors": ["chi","ta","te","to", "u"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-te",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nて",
+     "correct-answer": "te",
+     "distractors": ["chi","tsu","ta","to", "e"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-to",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nと",
+     "correct-answer": "to",
+     "distractors": ["chi","tsu","te","ta", "o"]
     },
     {
      "type":"review",
      "threshold": 200
     },
     {
+     "type": "instructional",
+     "body": "\"N\" characters:\nな - na - like the begining of \"not\"\nに - ni - like \"knee\"\nぬ - nu - pronounced \"new\"\nね - ne - like in \"nape\"\nの - no - pronounced \"no\"\n\nなに (nani) is the Japanese word for \"what\"."},
+    {
+     "type":"add-question",
+     "id":"hiragana-na",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nな",
+     "correct-answer": "na",
+     "distractors": ["ni","nu","ne","no", "a"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-ni",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nに",
+     "correct-answer": "ni",
+     "distractors": ["na","nu","ne","no", "i"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-nu",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nぬ",
+     "correct-answer": "nu",
+     "distractors": ["ni","na","ne","no", "u"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-ne",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nね",
+     "correct-answer": "ne",
+     "distractors": ["ni","nu","na","no", "e"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-no",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nの",
+     "correct-answer": "no",
+     "distractors": ["ni","nu","ne","na", "o"]
+    },
+    {
      "type":"review",
      "threshold": 250
+    },
+    {"type": "instructional",
+     "body": "\"N\" characters:\nな - na - like the begining of \"not\"\nに - ni - like \"knee\"\nぬ - nu - pronounced \"new\"\nね - ne - like in \"nape\"\nの - no - pronounced \"no\"\n\nなに (nani) is the Japanese word for \"what\"."},
+    {
+     "type":"add-question",
+     "id":"hiragana-na",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nな",
+     "correct-answer": "na",
+     "distractors": ["ni","nu","ne","no", "a"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-ni",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nに",
+     "correct-answer": "ni",
+     "distractors": ["na","nu","ne","no", "i"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-nu",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nぬ",
+     "correct-answer": "nu",
+     "distractors": ["ni","na","ne","no", "u"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-ne",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nね",
+     "correct-answer": "ne",
+     "distractors": ["ni","nu","na","no", "e"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-no",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nの",
+     "correct-answer": "no",
+     "distractors": ["ni","nu","ne","na", "o"]
     },
     {
      "type":"review",
      "threshold": 300
+    },
+    {"type": "instructional",
+     "body": "\"H\" characters:\nは - ha - like in \"hawk\"\nひ - hi - like \"heat\"\nふ - hu - pronounced \"who\"\nへ - he - like in \"head\"\nほ - ho - pronounced \"hoe\"\n\nはい (hai) is the Japanese word for \"yes\"."},
+    {
+     "type":"add-question",
+     "id":"hiragana-ha",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nは",
+     "correct-answer": "ha",
+     "distractors": ["hi","hu","he","ho", "a"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-hi",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nひ",
+     "correct-answer": "hi",
+     "distractors": ["ha","hu","he","ho", "i"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-hu",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nふ",
+     "correct-answer": "hu",
+     "distractors": ["hi","ha","he","ho", "u"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-he",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nへ",
+     "correct-answer": "he",
+     "distractors": ["hi","hu","ha","ho", "e"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-ho",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nほ",
+     "correct-answer": "ho",
+     "distractors": ["hi","hu","he","ha", "o"]
+    },
+    {
+     "type":"review",
+     "threshold": 350
+    },
+    {"type": "instructional",
+     "body": "\"M\" characters:\nま - ma - like the end of \"grandma\"\nみ - mi - like \"me\"\nむ - mu - pronounced \"moo\"\nめ - me - pronounced \"may\"\nも - mo - pronounced \"mow\"\n\nもも (momo) is the Japanese word for \"peach\"."},
+    {
+     "type":"add-question",
+     "id":"hiragana-ma",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nま",
+     "correct-answer": "ma",
+     "distractors": ["mi","mu","me","mo", "a"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-mi",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nみ",
+     "correct-answer": "mi",
+     "distractors": ["ma","mu","me","mo", "i"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-mu",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nむ",
+     "correct-answer": "mu",
+     "distractors": ["mi","ma","me","mo", "u"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-me",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nめ",
+     "correct-answer": "me",
+     "distractors": ["mi","mu","ma","mo", "e"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-mo",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nも",
+     "correct-answer": "mo",
+     "distractors": ["mi","mu","me","ma", "o"]
+    },
+    {
+     "type":"review",
+     "threshold": 400
+    },
+    {"type": "instructional",
+     "body": "\"Y\" characters:\nや - ya - like in \"yawn\"\nゆ - yu - pronounced \"you\"\nよ - yo - like in \"yolk\"\n\nゆき (yuki) is the Japanese word for \"snow\"."},
+    {
+     "type":"add-question",
+     "id":"hiragana-ya",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nや",
+     "correct-answer": "ya",
+     "distractors": ["yu","yo", "a", "u", "o"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-yu",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nゆ",
+     "correct-answer": "yu",
+     "distractors": ["ya","yo", "a","u", "o"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-yo",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nよ",
+     "correct-answer": "yo",
+     "distractors": ["yu","ya", "o", "u", "a"]
+    },
+    {
+     "type":"review",
+     "threshold": 450
+    },
+    {"type": "instructional",
+     "body": "\"R\" characters:\nら - ra - like in \"rock\"\nり - ri - like \"return\"\nる - ru - pronounced \"rue\"\nれ - re - pronounced \"ray\"\nろ - ro - pronounced \"row\"\n\nろく (roku) is the Japanese word for \"six\"."},
+    {
+     "type":"add-question",
+     "id":"hiragana-ra",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nら",
+     "correct-answer": "ra",
+     "distractors": ["ri","ru","re","ro", "a"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-ri",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nり",
+     "correct-answer": "ri",
+     "distractors": ["ra","ru","re","ro", "i"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-ru",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nる",
+     "correct-answer": "ru",
+     "distractors": ["ri","ra","re","ro", "u"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-re",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nれ",
+     "correct-answer": "re",
+     "distractors": ["ri","ru","ra","ro", "e"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-ro",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nろ",
+     "correct-answer": "ro",
+     "distractors": ["ri","ru","re","ra", "o"]
+    },
+    {
+     "type":"review",
+     "threshold": 500
+    },
+    {"type": "instructional",
+     "body": "\"W\" characters:\nわ - wa - like in \"walk\"\nを - wo - pronounced \"oh\"\n\nNote that the 'w' on を(wo) is not pronounced."},
+    {
+     "type":"add-question",
+     "id":"hiragana-wa",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nわ",
+     "correct-answer": "wa",
+     "distractors": ["i","u","e","wo", "o"]
+    },
+    {
+     "type":"add-question",
+     "id":"hiragana-wo",
+     "prompt":"Match the Japanese character with the sound it makes:\n\nを",
+     "correct-answer": "wo",
+     "distractors": ["wa","u","e","o", "i"]
     },
     {
      "type":"review",
