@@ -52,18 +52,14 @@ class Controller(object):
         lesson = self.lessons.get(session.lesson_id)
         if lesson is None:
             raise Error("No such lesson: %s" % session.lesson_id)
-        eng = Engine(lesson)
-        if(student.phone == "+14252467703" or student.phone == "+12068490631"):
-            json_data = open('hiragana.json')
-            data = json.load(json_data)
-            json_data.close()
-            eng = Engine(data)
-            messages = eng.process_message_dev(message, student)
-            #logging.info("Student's foo: %s" % student.questionHistory['foo'])
 
-        else:
-            eng = Engine(lesson)
-            session.state, messages = eng.process_message(session.state, message)
+        json_data = open('hiragana.json')
+        data = json.load(json_data)
+        json_data.close()
+        eng = Engine(data)
+        messages = eng.process_message_dev(message, student)
+        #logging.info("Student's foo: %s" % student.questionHistory['foo'])
+
         if session.state == -1:
             session.key.delete()
         else:

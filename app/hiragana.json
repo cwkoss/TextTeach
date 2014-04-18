@@ -417,6 +417,6 @@
     },
     {
      "type":"review",
-     "threshold": 1000
+     "threshold": 5000
     }]
 }
